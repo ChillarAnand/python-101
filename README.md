@@ -27,14 +27,14 @@ if Statements
 for Statements
 
 
-
 ### Functions
 
 
-### Data Structures
+### Builtin functions
 
-Lists
 
-Stacks
+### File handling
 
-Queues
+
+
+
