@@ -1,41 +1,4 @@
-## Syllabus
+## Python 101
 
-
-### Using the Python Interpreter
-
-
-### Introduction to Python
-
-Numbers
-
-Strings
-
-### Data Structures
-
-Lists
-
-Tuples
-
-Dictionaries
-
-
-
-### Control Flow Tools
-
-if Statements
-
-for Statements
-
-
-### Functions
-
-
-### Builtin functions
-
-
-### File handling
-
-### Classes
-
-
-
+A beginners guide to getting started with python programming.
+ec
