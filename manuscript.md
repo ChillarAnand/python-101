@@ -29,12 +29,11 @@ for Statements
 
 ### Functions
 
-Defining functions
--------------------
+#### Defining functions
 
 Keyword `def` is used to create new  function.
 
-```
+```python
 >>> def sum_n(n):
 ...     """ Prints sum of n natural numbers. """
 ...     print(n * (n + 1) / 2)
@@ -49,14 +48,14 @@ It can also have doc string to summarize what a function does. This is optional.
 
 You can check whether an object is a function.
 
-```
+```python
 >>> type(sum_n)
 <class 'function'>
 ```
 
 Calling a function with approriate arguements executes the function.
 
-```
+```python
 >>> sum_n()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -65,14 +64,13 @@ TypeError: sum_n() missing 1 required positional argument: 'n'
 15.0
 ```
 
-Return statement
-----------------
+#### Return statement
 
 Every function returns some value.
 
 If user doesn't return any value, `None` will be returned.
 
-```
+```python
 >>> x = sum_n(5)
 15.0
 >>> print(x)
@@ -83,7 +81,7 @@ Values can be returned from function using `return` statement.
 
 We can modify previous function to return value instead of printing it.
 
-```
+```python
 >>> def sum_n(n):
 ...     """ Returns sum of n natural numbers. """
 ...     return (n * (n + 1) / 2)
@@ -99,7 +97,7 @@ We can modify previous function to return value instead of printing it.
 Python has some builtin functions which are always available.
 
 
-```
+```python
 >>> help()
 
 
@@ -121,9 +119,8 @@ python
 range(0, 5)
 >>> list(range(5))
 [0, 1, 2, 3, 4]
-
-
 ```
+
 
 Full list of functions can be [found here](https://docs.python.org/3.5/library/functions.html)
 
