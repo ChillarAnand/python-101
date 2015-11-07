@@ -100,7 +100,7 @@ We can modify previous function to return value instead of printing it.
 15.0
 ```
 
-### Function arguments
+#### Function arguments
 
 Arguements can be either positional or keyword.
 
@@ -141,7 +141,7 @@ We can assign default values to arguements to make them optional.
 ```
 
 
-### Builtin functions
+#### Builtin functions
 
 Python has some builtin functions which are always available.
 
@@ -181,5 +181,45 @@ Full list of functions can be [found here](https://docs.python.org/3.5/library/f
 
 
 ### File handling
+
+Files can read/write using `open` function.
+
+You should pass filename(string) as argument.
+
+You can also pass mode(`'r'`, `'w'`), which is optional.
+
+```
+>>> f = open('data.txt')
+>>> f
+<open file 'data.txt', mode 'r' at 0x7fd3513d54b0>
+>>> f = open('data.txt')
+>>> for line in f:
+...   print(line)
+... 
+If you are reading this using python,
+
+You are on your way to become awesome python programmer.
+
+Now that you have read the file,
+
+try writing some text into a file.
+
+>>>
+```
+
+Lets create and write something into a file.
+
+```
+>>> f = open('story.txt')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IOError: [Errno 2] No such file or directory: 'story.txt'
+>>> f = open('story.txt', 'w')
+>>> f.write('Once there lived a python programmer.')
+>>> f.write('foo bar baz.')
+>>> f.write('more foo')
+>>> f.close()
+```
+
 
 ### Classes
