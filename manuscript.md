@@ -2,7 +2,50 @@
 
 
 ### Using the Python Interpreter
+#### Argument Passing
+The python script name and additional arguments thereafter are turned into a list of string and assigned into argv variable in sys module.
 
+* When no script and no argument:
+	`sys.argv[0]` is an empty string
+* When script name is given as -:
+	`sys.argv[0]` is set to "-"
+* When `-c` or `-m` command is used:
+	`sys.argv[0]` is set to `-c` or `-m` respectively
+
+
+
+`python -c 'print(hello world)'`
+
+Here `-c` stands for a python command
+Anything written after `-c` must be a valid python command
+
+`python -m pdb python-101.py`
+
+`-m` stands for module
+`pdb` stands for python debugger
+`python-101.py` is a file containing the python code
+
+`python -i python-101.py`
+
+`-i` means, python will run the program, `python-101.py` and dump you into 
+interactive interpreter 
+It helps in monitoring the variables at the end of the program.
+
+To enter directly into python interpreter just type:
+`python`
+
+Another way using python interpreter: 
+Create a file named foo.py
+
+The content of the file foo.py:
+```
+#!/usr/bin/env python
+
+print("This is python-101")
+``` 
+There are two ways to run this file:
+* `python foo.py`
+* Make it executable `chmod +x foo.py` and run the executable `./foo.py`
 
 ### Introduction to Python
 
