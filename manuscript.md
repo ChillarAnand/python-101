@@ -38,7 +38,7 @@ Another way using python interpreter:
 Create a file named foo.py
 
 The content of the file foo.py:
-```
+```python
 #!/usr/bin/env python
 
 print("This is python-101")
@@ -53,7 +53,7 @@ There are two ways to run this file:
 ##### +, -, * and /
 
 These operator works similar to other languages. 
-```
+```python
 >>> 2 + 2
 4
 >>> 50 - 5*6
@@ -70,7 +70,7 @@ These operator works similar to other languages.
 * `**` is used to calculate powers
 * `=` is used to assign a value to a variable
 
-```
+```python
 >>> 12 ** 2
 144
 >>> 2 ** 3
@@ -79,7 +79,7 @@ These operator works similar to other languages.
 
 ##### Variable assignment:
 
-```
+```python
 >>> a = 12
 >>> b = 14
 >>> a + b
@@ -98,7 +98,7 @@ In interactive mode the last printed expression is assigned to a variable named 
 * `\` Can be used for escaped quotes
 * We can use a combination of single quotes and double quotes to avoid use of `\` before escaped character
 
-```
+```python
 >>> 'This is BangPypers'
 'This is BangPypers'
 >>> 'Rama don\'t like python'
@@ -108,14 +108,14 @@ In interactive mode the last printed expression is assigned to a variable named 
 ```
 * `print()` function omits the enclosing quotes.
 
-```
+```python
 >>> print("Hari loves python")
 Hari loves python
 
 ```
 * If you want to print the string as it is without interpreting prefaced `\` as a special character then use raw strings 
 
-```
+```python
 >>> print('home\abc')
 homebc
 >>> print(r'home\abc')
@@ -124,7 +124,7 @@ home\abc
 
 * If string is too long use triple quotes, `("""...""" or '''...''')`
 
-```
+```python
 >>> print(""" Python is very easy
 ... I am learning python 
 ... It is a beautiful language """)
@@ -135,7 +135,7 @@ It is a beautiful language
 ``` 
 * Strings can be concatenated using `+` and repeated with `*`
 
-```
+```python
 >>> "p" + "y" * 5 + "thon"
 'pyyyyython'
 
@@ -143,7 +143,7 @@ It is a beautiful language
 * Two or more string literals, next to each other are automatically concatenated.
 * To concatenate a string literal and a string variable we must use `+`
 
-```
+```python
 >>> "hello" "world"
 'helloworld'
 >>> var = "abc"
@@ -164,7 +164,7 @@ SyntaxError: invalid syntax
 * If index is a negative number, it starts counting form the right
 * Negative indices start form -1
 
-```
+```python
 >>> word = "This is Python Bangpypers"
 >>> word[0]  # Indexing starts from 0
 'T'
@@ -188,7 +188,7 @@ SyntaxError: invalid syntax
 * In `word[2:10]`, character at index `2` is included and at index `10` is excluded
 * Slices have default indices. An omitted first index defaults to `0` and omitted 2nd index defaults to size of the string
 
-```
+```python
 >>> word[15:-1]   # -ve index also works in slicing 
 'Bangpyper'
 >>> word[15:]     # last index defaults to length of the string
@@ -204,7 +204,7 @@ SyntaxError: invalid syntax
 
 * Python strings are immutable 
 
-```
+```python
 >>> word[5] = 'a'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -219,7 +219,7 @@ TypeError: 'str' object does not support item assignment
 * `find(sub[, start[, end]])`: Return the lowest index in the string where substring sub is found
 * `format()`: Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
 
-```
+```python
 >>> "The sum of 1 + 2 is {0}".format(1+2)
 'The sum of 1 + 2 is 3'
 ``` 
@@ -227,7 +227,7 @@ TypeError: 'str' object does not support item assignment
 * `isalpha()`, `isdecimal()`,`isdigit()`, or `isnumeric()`
 * `join()`: Return a string which is the concatenation of the strings, passed as argument in join. 
 
-```
+```python
 #!/usr/bin/python
 
 s = "-";
@@ -236,7 +236,7 @@ print s.join( seq )
 ```
 * `split`: The method split() returns a list of all the words in the string, using str as the separator optionally limiting the number of splits to num.
 
-```
+```python
 #!/usr/bin/python
 
 str = "Line1-abcdef \nLine2-abc \nLine4-abcd";
@@ -253,7 +253,7 @@ output:
 ##### String Formating printf-style
 See the examples below
 
-```
+```python
 >>> print("My name is %s, I am %d yrs old" %("rajiv", 15))   # As tuples 
 My name is rajiv, I am 15 yrs old
 >>> print('%(language)s has %(number)03d quote types.' %     # As dictionary
@@ -269,11 +269,70 @@ Python has 002 quote types.
 
 ### Data Structures
 
-Lists
+#### Lists
 
-Tuples
+* Comma separated values between square brackets
+* Lists can also be indexed and sliced
+* List also support concatenation by `+`
+* Lists are mutable
+* To add items at the end of the list use `append()`
 
-Dictionaries
+```python
+>>> list = [1, 2, 3, 4, 5, 6]
+>>> list
+[1, 2, 3, 4, 5, 6]
+>>> list[0]                        # indexing returns the item
+1
+>>> list[4]                        # indexing returns the item
+5
+>>> list[-1]                        # indexing returns the item
+6
+
+>>> list[2:]                        # Slicing returns a new list
+[3, 4, 5, 6]
+
+>>> list + [12, 13, 14]             # list support concatenation
+[1, 2, 3, 4, 5, 6, 12, 13, 14]
+
+>>> list[4] = 1000                  # lists are mutable
+>>> list
+[1, 2, 3, 4, 1000, 6]
+
+>>> list.append("Bangalore")        # Will append bangalore at the end of the list
+>>> list
+[1, 2, 3, 4, 1000, 6, 'Bangalore']
+
+>>> list[2:4] = ["Python"]          # Slices can also be initialized
+>>> list                            
+[1, 2, 'Python', 1000, 6, 'Bangalore']
+
+>>> len(list)                       # length of list can be found using len 
+6
+
+
+>>> ### Nesting of list
+... 
+>>> 
+>>> a = [1, 2, 3]
+>>> b = ["m", "n", "o"]
+>>> nlist = [a, b]
+>>> nlist
+[[1, 2, 3], ['m', 'n', 'o']]
+>>> nlist[0]
+[1, 2, 3]
+>>> nlist[1]
+['m', 'n', 'o']
+>>> nlist[1][0]
+'m'
+>>> nlist[0][2]
+3
+
+
+```
+
+#### Tuples
+
+#### Dictionaries
 
 
 
