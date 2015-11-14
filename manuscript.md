@@ -221,6 +221,31 @@ range(0, 5)
 
 Full list of functions can be [found here](https://docs.python.org/3.5/library/functions.html)
 
+Lets try to understand Lambda
+Small anonymous functions can be created with the lambda keyword
+```Python
+def sumof(x,y):
+    return x+y
+```
+
+Above function can also be represented using lambda
+lambda x,y: x+y
+
+Lambda functions can be used wherever function objects are required. Said that, let us try some inbuilt 
+functions like map, filter
+
+As help help of map
+map(func, *iterables) --> map object
+ |  
+ |  Make an iterator that computes the function using arguments from
+ |  each of the iterables.  Stops when the shortest iterable is exhausted.
+
+we either can define a function first and then pass it as first param, or use lambda instead.
+map(sumof, [1,2,3], [4,5,6])
+
+or 
+
+map(lambda x,y: x+y, [1,2,3], [4,5,6])
 
 
 ### File handling
