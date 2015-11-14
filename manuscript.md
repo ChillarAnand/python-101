@@ -49,9 +49,223 @@ There are two ways to run this file:
 
 ### Introduction to Python
 
-Numbers
+#### Numbers
+##### +, -, * and /
 
-Strings
+These operator works similar to other languages. 
+```
+>>> 2 + 2
+4
+>>> 50 - 5*6
+20
+>>> (50 - 5*6) / 4
+5.0
+>>> 8 / 5  # division always returns a floating point number
+1.6
+```
+
+* `/` always returns a float.
+* `//` can be used to discard the fractional part
+* `%` can be used to calculate the remainder
+* `**` is used to calculate powers
+* `=` is used to assign a value to a variable
+
+```
+>>> 12 ** 2
+144
+>>> 2 ** 3
+8 
+```
+
+##### Variable assignment:
+
+```
+>>> a = 12
+>>> b = 14
+>>> a + b
+26
+>>> c = a + b
+>>> c
+26
+
+```
+
+In interactive mode the last printed expression is assigned to a variable named `_`
+
+#### Strings
+
+* Strings can be enclosed in single quotes (`'...'`)or double quotes(`"..."`).
+* `\` Can be used for escaped quotes
+* We can use a combination of single quotes and double quotes to avoid use of `\` before escaped character
+
+```
+>>> 'This is BangPypers'
+'This is BangPypers'
+>>> 'Rama don\'t like python'
+'Rama don't like python'
+>>> "Hari don't know why"
+"Hari don't know why"
+```
+* `print()` function omits the enclosing quotes.
+
+```
+>>> print("Hari loves python")
+Hari loves python
+
+```
+* If you want to print the string as it is without interpreting prefaced `\` as a special character then use raw strings 
+
+```
+>>> print('home\abc')
+homebc
+>>> print(r'home\abc')
+home\abc
+```
+
+* If string is too long use triple quotes, `("""...""" or '''...''')`
+
+```
+>>> print(""" Python is very easy
+... I am learning python 
+... It is a beautiful language """)
+Python is very easy
+I am learning python 
+It is a beautiful language 
+>>> 
+``` 
+* Strings can be concatenated using `+` and repeated with `*`
+
+```
+>>> "p" + "y" * 5 + "thon"
+'pyyyyython'
+
+```
+* Two or more string literals, next to each other are automatically concatenated.
+* To concatenate a string literal and a string variable we must use `+`
+
+```
+>>> "hello" "world"
+'helloworld'
+>>> var = "abc"
+>>> var + "def" 
+'abcdef'
+>>> var "def"  # This will give syntax error
+File "<stdin>", line 1
+var "def"
+^
+SyntaxError: invalid syntax
+
+```
+
+##### String Indexing
+
+* First character of a string has index 0
+* Character is a string of size 1
+* If index is a negative number, it starts counting form the right
+* Negative indices start form -1
+
+```
+>>> word = "This is Python Bangpypers"
+>>> word[0]  # Indexing starts from 0
+'T'
+>>> word[1]
+'h'
+>>> word[5]
+'i'
+>>> word[12]
+'o'
+>>> word[-1] # -ve indexing starts form -1 and it points to last character
+'s'
+>>> word[-2]
+'r'
+>>> word[-5]
+'y'
+>>> 
+
+```
+
+* To obtain substring we use word slicing
+* In `word[2:10]`, character at index `2` is included and at index `10` is excluded
+* Slices have default indices. An omitted first index defaults to `0` and omitted 2nd index defaults to size of the string
+
+```
+>>> word[15:-1]   # -ve index also works in slicing 
+'Bangpyper'
+>>> word[15:]     # last index defaults to length of the string
+'Bangpypers'
+>>> word[1:]        
+'his is Python Bangpypers'
+>>> word[:]       # First index defaults to 0
+'This is Python Bangpypers'
+>>> word[0:5]      
+'This '
+
+```
+
+* Python strings are immutable 
+
+```
+>>> word[5] = 'a'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+
+```
+
+##### String Methods
+* `capitalize()`: Return a copy of the string with its first character capitalized and the rest lowercased
+* `center(width[, fillchar])`: Return centered in a string of length width
+* `count(sub[, start[, end]])`: Return the number of non-overlapping occurrences of substring sub in the range [start, end]
+* `find(sub[, start[, end]])`: Return the lowest index in the string where substring sub is found
+* `format()`: Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
+
+```
+>>> "The sum of 1 + 2 is {0}".format(1+2)
+'The sum of 1 + 2 is 3'
+``` 
+* `isalnum()`: Returns true if the string is alphanumeric
+* `isalpha()`, `isdecimal()`,`isdigit()`, or `isnumeric()`
+* `join()`: Return a string which is the concatenation of the strings, passed as argument in join. 
+
+```
+#!/usr/bin/python
+
+s = "-";
+seq = ("a", "b", "c"); # This is sequence of strings.
+print s.join( seq )
+```
+* `split`: The method split() returns a list of all the words in the string, using str as the separator optionally limiting the number of splits to num.
+
+```
+#!/usr/bin/python
+
+str = "Line1-abcdef \nLine2-abc \nLine4-abcd";
+print str.split( )
+print str.split(' ', 1 )
+
+output:
+
+['Line1-abcdef', 'Line2-abc', 'Line4-abcd']
+['Line1-abcdef', '\nLine2-abc \nLine4-abcd']
+```
+* There are many other predefined methods for strings, see [here](https://docs.python.org/3/library/stdtypes.html#string-methods)
+
+##### String Formating printf-style
+See the examples below
+
+```
+>>> print("My name is %s, I am %d yrs old" %("rajiv", 15))   # As tuples 
+My name is rajiv, I am 15 yrs old
+>>> print('%(language)s has %(number)03d quote types.' %     # As dictionary
+...       {'language': "Python", "number": 2})
+Python has 002 quote types.
+```
+
+##### in and len()
+* `len(str)`: This will return the length of the string, `str`
+* `"abc" in str`: Will return `true` if "abc" is substring of `str`
+
+`str` is a string variable
 
 ### Data Structures
 
