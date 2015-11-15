@@ -266,3 +266,192 @@ IOError: [Errno 2] No such file or directory: 'story.txt'
 
 
 ### Classes
+
+A class is a specification (think of it as a blueprint or pattern and a set of instructions) 
+of how to provide some service. 
+Engineers and construction and factory workers use blueprints to build cars, buildings, bridges, 
+virtually anything.  Tailors, seamsters, printers use patterns to make the clothes we wear, 
+books we read.  Chefs follow recipes to put together meals.
+
+```python
+>>> class Maths:
+    def sumof(self, x, y):
+        return x+y
+    def mulof(self, x, y):
+        return x*y
+
+>>> obj = Maths()
+>>> obj.sumof(3,4)
+7
+>>> obj.mulof(3,4)
+12
+```
+
+Common mistakes while coding during initial days
+```
+>>> class Maths:
+    def sumof(x, y):
+        return x+y
+    def mulof(x, y):
+        return x*y
+
+>>> obj = Maths()
+>>> obj.sumof(3,4)
+Traceback (most recent call last):
+  File "<pyshell#49>", line 1, in <module>
+    obj.sumof(3,4)
+TypeError: sumof() takes 2 positional arguments but 3 were given
+```
+
+Below example from taken from
+http://anandology.com/python-practice-book/object_oriented_programming.html#classes-and-objects
+```python
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def withdraw(self, amount):
+        self.balance -= amount
+        return self.balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+
+>>> a = BankAccount()
+>>> b = BankAccount()
+>>> a.deposit(100)
+100
+>>> b.deposit(50)
+50
+>>> b.withdraw(10)
+40
+>>> a.withdraw(10)
+90
+
+class BankAccount:
+    def __init__(self, initial_balance=0):
+        self.balance = initial_balance
+
+    def withdraw(self, amount):
+        self.balance -= amount
+        return self.balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+>>> obj = BankAccount(200)
+>>> obj.balance
+200
+>>> obj.withdraw(50)
+150
+>>> obj.deposit(150)
+300
+```
+
+Use docstring while writing code, that can be used to create documentation or while doing
+help to the object
+
+```python
+>>> class BankAccount:
+    """This class can be used to get the bank account details
+       and also to do transaction.
+    """
+    def __init__(self, initial_balance=0):
+        """Account holder can open their account with certail
+           Initial balance, otherwise initial balace will be 0
+        """
+        self.balance = initial_balance
+
+    def withdraw(self, amount):
+        """This function can be used to withdraw amount from
+           your account.
+        """
+        self.balance -= amount
+        return self.balance
+
+    def deposit(self, amount):
+        """This function can be used to deposit amount into
+           your account.
+        """
+        self.balance += amount
+        return self.balance
+
+>>> help(BankAccount)
+Help on class BankAccount in module __main__:
+
+class BankAccount(builtins.object)
+ |  This class can be used to get the bank account details
+ |  and also to do transaction.
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, initial_balance=0)
+ |      Account holder can open their account with certail
+ |      Initial balance, otherwise initial balace will be 0
+ |  
+ |  deposit(self, amount)
+ |      This function can be used to deposit amount into
+ |      your account.
+ |  
+ |  withdraw(self, amount)
+ |      This function can be used to withdraw amount from
+ |      your account.
+```
+
+#### Inheritance
+A language feature would not be worthy of the name “class” without supporting inheritance. 
+The syntax for a derived class definition looks like this:
+
+```Python
+class DerivedClassName(BaseClassName):
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+```
+Example
+```python
+>> class Alto:
+    def price(self):
+        return '3L INR'
+    def power(self):
+        return '800cc'
+    def maker(self):
+        return 'Maruti'
+
+>>> obj = Alto()
+>>> obj.maker()
+'Maruti'
+>>> obj.power()
+'800cc'
+>>> 
+>>> 
+>>> class Swift(Alto):
+    def new_features(self):
+        return 'airbag, bluetooth'
+
+>>> sw_obj = Swift()
+>>> sw_obj.maker()
+'Maruti'
+>>> sw_obj.power()
+'800cc'
+>>> sw_obj.new_features()
+'airbag, bluetooth'
+>>> 
+>>> class Swift_newgen(Swift):
+    def price(self):
+        return '5L INR'
+    def power(self):
+        return '1200cc'
+
+>>> ng_obj = Swift_newgen()
+>>> ng_obj.price()
+'5L INR'
+>>> ng_obj.power()
+'1200cc'
+>>> ng_obj.maker()
+'Maruti'
+>>> 
+```
