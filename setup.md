@@ -54,3 +54,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 ### Windows
+
+
+If you are using windows, go to python [downloads page](https://www.python.org/downloads/windows/) and download python executable file.
+
+Once it is downloaded, double click on it to install python.
+
+Press `Windows + R` to open `Run`. Type `python` and press enter which opens up a python interpreter like this.
+
+![Alt windows](https://cloud.githubusercontent.com/assets/4463796/11190670/d8e3b9ae-8cbc-11e5-958d-10f1c313e8b9.PNG)
