@@ -38,7 +38,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 - [brew](http://brew.sh/) is extremely popular package manager in OS X.
 `brew` is similar to `apt-get` or `yum` in GNU/Linux operating system.
 
-- `brew install python3`. This will install latest Python version ie. Python 3.5.
+- `brew update && brew install python3`. This will install latest Python version ie. Python 3.5.
 
 - Type `python3.5` in terminal or shell.
 
