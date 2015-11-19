@@ -1,6 +1,5 @@
 ## Syllabus
 
-
 ### Using the Python Interpreter
 #### Argument Passing
 The python script name and additional arguments thereafter are turned into a list of string and assigned into argv variable in sys module.
@@ -1101,3 +1100,5 @@ Example
 'Maruti'
 >>> 
 ```
+
+Note: Some of the examples in this tutorial are taken form official documentation/tutorial of python3. [See here] https://docs.python.org/3/tutorial/
