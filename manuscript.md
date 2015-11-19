@@ -330,18 +330,359 @@ Python has 002 quote types.
 
 ```
 
+##### List Methods
+* list.append(x): Add an item, `x` to the end of the `list`
+* list.extend(L): Append the list, `L` to `list`
+* list.insert(i, x): Insert item, `x` at index, `i` in the given `list`
+* list.remove(x): Remove item, `x` from the `list`
+* list.pop(i): remove an item at ith position from the list and return that value. If no index given it returns the last item.
+* list.clear(): removes all items form the list
+* list.index(x): index of item, `x` in the list
+* list.count(x): returns the number of times item, `x` appears in the list
+* list.reverse(): reverse the elements in the list in place
+* list.copy(): returns a copy of the list
+* list.sort(reverse=false): sort the list in ascending order if `reverse` is false and vice versa
+
+##### The `del` statement
+```python
+>>> a = [-1, 1, 66.25, 333, 333, 1234.5]
+>>> del a[0]                  # delete an item at ith index
+>>> a
+[1, 66.25, 333, 333, 1234.5]
+>>> del a[2:4]                # delete sublist 
+>>> a
+[1, 66.25, 1234.5]
+>>> del a[:]                  # delete whole list
+>>> a
+[]
+>>> del a                     # delete the entire variable
+```
+
 #### Tuples
 
+* All tuples are enclosed in paranthesis, to support nested tuples
+* But input may or may not be surrounded by parenthesis
+* Tuples are immutable
+* But they can contain immutable objects, i.e. lists
+* Empty tuples are created by empty pair of parenthesis
+* Singleton tuples are created by having tuple value followed by a comma.
+* `t = 12345, 54321, 'hello!'` is called `tuple packing`
+* the reverse is `tuple unpacking` i.e. `x, y, z = t` .
+
+```python
+>>> t = 12345, 54321, 'hello!'
+>>> t[0]
+12345
+>>> t
+(12345, 54321, 'hello!')
+>>> # Tuples may be nested:
+... u = t, (1, 2, 3, 4, 5)
+>>> u
+((12345, 54321, 'hello!'), (1, 2, 3, 4, 5))
+>>> # Tuples are immutable:
+... t[0] = 88888
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> # but they can contain mutable objects:
+... v = ([1, 2, 3], [3, 2, 1])
+>>> v
+([1, 2, 3], [3, 2, 1])
+```
+
+```python
+>>> empty = ()
+>>> singleton = 'hello',    
+>>> len(empty)
+0
+>>> len(singleton)
+1
+>>> singleton
+('hello',)
+```
+
+#### Sets
+
+Please the examples below  
+```python
+>>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+>>> print(basket)                      # show that duplicates have been removed
+{'orange', 'banana', 'pear', 'apple'}
+>>> 'orange' in basket                 # fast membership testing
+True
+>>> 'crabgrass' in basket
+False
+
+>>> # Demonstrate set operations on unique letters from two words
+...
+>>> a = set('abracadabra')
+>>> b = set('alacazam')
+>>> a                                  # unique letters in a
+{'a', 'r', 'b', 'c', 'd'}
+>>> a - b                              # letters in a but not in b
+{'r', 'd', 'b'}
+>>> a | b                              # letters in either a or b
+{'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
+>>> a & b                              # letters in both a and b
+{'a', 'c'}
+>>> a ^ b                              # letters in a or b but not both
+{'r', 'd', 'b', 'm', 'z', 'l'}
+```
+
 #### Dictionaries
+* Called associative arrays in other languages
+* They are indexed by user defined keys
+* Keys are immutable
+* Keys can only be strings and numbers
+* Tuples can also be used as keys if they contain only strings and numbers
+* Any mutable object cannot be used as a key, e.g lists, slices etc
+* Dictionaries can be defined as unorderd set of "key, value" pairs
+* it is possible to delete a "key, value" pair using del key
+* `list(d.keys())` returns the list of keys of ductionary `d`
+* `sorted(d.keys())` to get the keys in sorted order
+* to check if `key` is present in dictionary we can use `in` keyword
+
+Some examples
+
+```python
+>>> score = {'harry': 75, 'snape': 97}
+>>> score['ron'] = 50
+>>> score
+{'snape': 97, 'ron': 50, 'harry': 75}
+>>> score['harry']
+75
+>>> del score['snape']
+>>> score['voldemort'] = 60
+>>> score
+{'ron': 50, 'voldemort': 60, 'harry': 75}
+>>> list(score.keys())
+['voldemort', 'ron', 'harry']
+>>> sorted(score.keys())
+['ron', 'voldemort', 'harry']
+>>> 'ron' in score
+True
+>>> 'harry' not in score
+False
+```
+
+##### The dict() constructor
+* used to build dictionary form a sequence of "key, value" pairs
+* It can also be done by specifying pairs using keyword arguments
+
+```python
+>>> dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+{'sape': 4139, 'jack': 4098, 'guido': 4127}
+>>> dict(sape=4139, guido=4127, jack=4098)
+{'sape': 4139, 'jack': 4098, 'guido': 4127}
+```
 
 
 
 ### Control Flow Tools
 
-if Statements
+#### while loop
+Lets see this with the help of an example
 
-for Statements
+```python
+>>> # Fibbonaci numbers
+>>> n = 20               # single assignment
+>>> a, b = 0, 1          # multi assignment 
+>>> while n > 0:
+...     print(b)
+...     a, b, n = b, a+b, n-1         # multi assignment
+... 
+1
+1
+2
+3
+5
+8
+13
+21
+#deleting the rest.
+```
 
+###### To Note here apart form syntax of while 
+* we can assign variables in the same line as shown in above example
+* `print` is printing each output in different lines
+
+##### Conditions in python
+* any non-zero integer value evaluates to `true` and zero is `false`
+* condition can also be a string or list value (anything with non-zero length is `true`)
+* Empty list, string or any sequence is false
+* standard comparison operators are: `<, >, ==, <=, >=, and !=`
+
+##### More about print statement
+* you can print any number of values using print statement followed by end of line
+
+```python
+>>> a, b = 10, 12
+>>> print("value of a is: ", a, "value of b is: ", b)
+value of a is:  10 value of b is:  12
+
+```
+
+* To avoid end of line use the  keyword argument `end `.
+
+```python
+>>> a, b = 0, 1
+>>> while b < 1000:
+...     print(b, end=',')
+...     a, b = b, a+b
+...
+1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
+```
+
+#### if Statement
+
+See the example below
+```python
+>>> # Program to find if number is multiple of 2 or 3
+... 
+>>> x = int(input("Please enter an integer number: "))
+Please enter an integer number: 56
+>>> if x%2 == 0:
+...     print("x is a multiple of 2")
+... elif x%3 == 0:
+...     print("x is a multiple of 3")
+... else:
+...     print("x is not a multiple of 2 or 3")
+... 
+x is a multiple of 2
+```
+
+##### Note
+* There can be zero or more `elif` block and `else` block is optional
+
+##### input()
+* Input is taken as a raw string which is then typecasted into its respective type.
+
+#### for Statements
+
+See the example below to understand about `for` statement in python 
+
+```python
+>>> ## To capitalize each statement in a string
+... stringList = ["ravi got  his pocket money.", 
+                  "he decided to buy an ice cream.", 
+                  "he ran to the ice ream shop, but in hurry he forgot the money",
+                  "ravi came back home and kept the money in his piggy bank"]
+>>> for str in stringList:
+...     print(str.capitalize())
+... 
+Ravi got  his pocket money.
+He decided to buy an ice cream.
+He ran to the ice cream shop, but in hurry he  forgot the money
+Ravi came back home and kept the money in his piggy bank
+
+```
+
+* If the sequence itself needs to be modified while looping then its recommended to create a copy of same sequence using slice. 
+
+```python
+>>> for w in words[:]:  # Loop over a slice copy of the entire list.
+...     if len(w) > 6:
+...         words.insert(0, w)
+...
+>>> words
+['defenestrate', 'cat', 'window', 'defenestrate']
+```
+
+##### Looping over integers
+* Use `range()` function
+* `range()` can be used in three ways
+* `range(n)`: will contain numbers form `0` through `n-1`
+* `range(x, y)`: will start from `x` and end at `y - 1`
+* `range(x, y, z)`: will start at `x` and continue as `x + z`, `x + 2z` until `x + kz` is less than `y`
+
+```python
+range(5, 10)
+   5 through 9
+
+range(0, 10, 3)
+   0, 3, 6, 9
+
+range(-10, -100, -30)
+  -10, -40, -70
+```
+
+To iterate over indices of a sequence
+
+```python
+>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+>>> for i in range(len(a)):
+...     print(i, a[i])
+...
+0 Mary
+1 had
+2 a
+3 little
+4 lamb
+```
+
+To iterate over dictionary
+```python
+>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+>>> for k, v in knights.items():
+...     print(k, v)
+...
+gallahad the pure
+robin the brave
+```
+
+```python
+>>> for i, v in enumerate(['tic', 'tac', 'toe']):
+...     print(i, v)
+...
+0 tic
+1 tac
+2 toe
+
+>>> for i in reversed(range(1, 10, 2)):
+...     print(i)
+...
+9
+7
+5
+3
+1
+```
+
+* To convert `range` into a list use `list(range(5))`
+
+#### pythons `break` `continue` and `else`
+* `break`: breaks out of the loop
+* `continue`: continues with the next iteration of the loop
+* `else`: It is executed when loop terminates through exhaution of the list (in case of `for`) or when loops condition becomes false (in case of `while`)
+
+```python
+>>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print(n, 'equals', x, '*', n//x)
+...             break
+...     else:
+...         # loop fell through without finding a factor
+...         print(n, 'is a prime number')
+...
+2 is a prime number
+3 is a prime number
+4 equals 2 * 2
+5 is a prime number
+6 equals 2 * 3
+7 is a prime number
+8 equals 2 * 4
+9 equals 3 * 3
+```
+
+##### The `pass` statement
+* It does nothing
+
+```python
+>>> if True:
+...    pass
+>>>
+```
 
 ### Functions
 
