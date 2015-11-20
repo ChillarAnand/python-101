@@ -362,7 +362,7 @@ Python has 002 quote types.
 * All tuples are enclosed in paranthesis, to support nested tuples
 * But input may or may not be surrounded by parenthesis
 * Tuples are immutable
-* But they can contain immutable objects, i.e. lists
+* But they can contain mutable objects, i.e. lists
 * Empty tuples are created by empty pair of parenthesis
 * Singleton tuples are created by having tuple value followed by a comma.
 * `t = 12345, 54321, 'hello!'` is called `tuple packing`
