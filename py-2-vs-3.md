@@ -140,3 +140,98 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'xrange' is not defined
 ```
+
+---------------------------------------------------------------------------
+
+
+### classes
+
+#### Python 2
+
+Old style classes.
+
+```python
+class Account():
+    pass
+```
+
+New style classes.
+
+```python
+class Account(object):
+    pass
+```
+
+Can use descriptors.
+
+Has  elegant `mro` for base class lookup.
+
+Always use new style classes
+
+
+
+#### Python 3
+
+Only new style classes.
+
+
+```python
+class Account():
+    pass
+```
+
+---------------------------------------------------------------------------
+
+### iterators everywhere
+
+#### Python 2
+
+A lot of built-ins returned lists by default.
+
+```
+my_dict = {'name': 'Dan', 'age': 25}
+
+>>> my_dict.keys()
+['age', 'name']
+
+>>> my_dict.items()
+[('age', 25), ('name', 'Dan')]
+
+>>> my_dict.values()
+[25, 'Dan']
+```
+
+If you need iterators, you need to use iter* methods.
+
+```
+>>> my_dict.iterkeys()
+<dictionary-keyiterator object at 0x207e050>
+
+>>> my_dict.iteritems()
+<dictionary-itemiterator object at 0x207e0a8>
+
+>>> my_dict.itervalues()
+<dictionary-valueiterator object at 0x207e158>
+```
+
+
+#### Python 3
+
+Python 3 decided that it would be best to always return iterators for efficiency.
+
+
+```
+my_dict = {'name': 'Dan', 'age': 25}
+
+>>> my_dict.keys()
+dict_keys(['age', 'name'])
+
+>>> my_dict.items()
+dict_items([('age', 25), ('name', 'Dan')])
+
+>>> my_dict.values()
+dict_values([25, 'Dan'])
+
+```
+
+Other functions like `map()`, `filter()`, `range()`, `zip()` return iterators.
