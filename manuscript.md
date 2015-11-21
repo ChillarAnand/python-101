@@ -94,7 +94,7 @@ In interactive mode the last printed expression is assigned to a variable named 
 #### Strings
 
 * Strings can be enclosed in single quotes (`'...'`)or double quotes(`"..."`).
-* `\` Can be used for escaped quotes
+* `\` Can be used for escaped characters
 * We can use a combination of single quotes and double quotes to avoid use of `\` before escaped character
 
 ```python
@@ -437,7 +437,7 @@ False
 * Any mutable object cannot be used as a key, e.g lists, slices etc
 * Dictionaries can be defined as unorderd set of "key, value" pairs
 * it is possible to delete a "key, value" pair using del key
-* `list(d.keys())` returns the list of keys of ductionary `d`
+* `list(d.keys())` returns the list of keys of dictionary `d`
 * `sorted(d.keys())` to get the keys in sorted order
 * to check if `key` is present in dictionary we can use `in` keyword
 
@@ -483,13 +483,14 @@ False
 Lets see this with the help of an example
 
 ```python
->>> # Fibbonaci numbers
+>>> # first n Fibbonaci numbers
 >>> n = 20               # single assignment
 >>> a, b = 0, 1          # multi assignment 
 >>> while n > 0:
-...     print(b)
+...     print(a)
 ...     a, b, n = b, a+b, n-1         # multi assignment
 ... 
+0
 1
 1
 2
@@ -526,10 +527,10 @@ value of a is:  10 value of b is:  12
 ```python
 >>> a, b = 0, 1
 >>> while b < 1000:
-...     print(b, end=',')
+...     print(a, end=',')
 ...     a, b = b, a+b
 ...
-1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
+0, 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
 ```
 
 #### if Statement
