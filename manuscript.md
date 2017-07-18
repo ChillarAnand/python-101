@@ -1,15 +1,14 @@
-## Syllabus
-
 ### Using the Python Interpreter
+
 #### Argument Passing
 The python script name and additional arguments thereafter are turned into a list of string and assigned into argv variable in sys module.
 
 * When no script and no argument:
-	`sys.argv[0]` is an empty string
+    `sys.argv[0]` is an empty string
 * When script name is given as -:
-	`sys.argv[0]` is set to "-"
+    `sys.argv[0]` is set to "-"
 * When `-c` or `-m` command is used:
-	`sys.argv[0]` is set to `-c` or `-m` respectively
+    `sys.argv[0]` is set to `-c` or `-m` respectively
 
 
 
@@ -26,14 +25,14 @@ Anything written after `-c` must be a valid python command
 
 `python -i python-101.py`
 
-`-i` means, python will run the program, `python-101.py` and dump you into 
-interactive interpreter 
+`-i` means, python will run the program, `python-101.py` and dump you into
+interactive interpreter
 It helps in monitoring the variables at the end of the program.
 
 To enter directly into python interpreter just type:
 `python`
 
-Another way using python interpreter: 
+Another way using python interpreter:
 Create a file named foo.py
 
 The content of the file foo.py:
@@ -41,7 +40,7 @@ The content of the file foo.py:
 #!/usr/bin/env python
 
 print("This is python-101")
-``` 
+```
 There are two ways to run this file:
 * `python foo.py`
 * Make it executable `chmod +x foo.py` and run the executable `./foo.py`
@@ -51,7 +50,7 @@ There are two ways to run this file:
 #### Numbers
 ##### +, -, * and /
 
-These operator works similar to other languages. 
+These operator works similar to other languages.
 ```python
 >>> 2 + 2
 4
@@ -73,7 +72,7 @@ These operator works similar to other languages.
 >>> 12 ** 2
 144
 >>> 2 ** 3
-8 
+8
 ```
 
 ##### Variable assignment:
@@ -112,7 +111,7 @@ In interactive mode the last printed expression is assigned to a variable named 
 Hari loves python
 
 ```
-* If you want to print the string as it is without interpreting prefaced `\` as a special character then use raw strings 
+* If you want to print the string as it is without interpreting prefaced `\` as a special character then use raw strings
 
 ```python
 >>> print('home\abc')
@@ -125,13 +124,13 @@ home\abc
 
 ```python
 >>> print(""" Python is very easy
-... I am learning python 
+... I am learning python
 ... It is a beautiful language """)
 Python is very easy
-I am learning python 
-It is a beautiful language 
->>> 
-``` 
+I am learning python
+It is a beautiful language
+>>>
+```
 * Strings can be concatenated using `+` and repeated with `*`
 
 ```python
@@ -146,7 +145,7 @@ It is a beautiful language
 >>> "hello" "world"
 'helloworld'
 >>> var = "abc"
->>> var + "def" 
+>>> var + "def"
 'abcdef'
 >>> var "def"  # This will give syntax error
 File "<stdin>", line 1
@@ -179,7 +178,7 @@ SyntaxError: invalid syntax
 'r'
 >>> word[-5]
 'y'
->>> 
+>>>
 
 ```
 
@@ -188,20 +187,20 @@ SyntaxError: invalid syntax
 * Slices have default indices. An omitted first index defaults to `0` and omitted 2nd index defaults to size of the string
 
 ```python
->>> word[15:-1]   # -ve index also works in slicing 
+>>> word[15:-1]   # -ve index also works in slicing
 'Bangpyper'
 >>> word[15:]     # last index defaults to length of the string
 'Bangpypers'
->>> word[1:]        
+>>> word[1:]
 'his is Python Bangpypers'
 >>> word[:]       # First index defaults to 0
 'This is Python Bangpypers'
->>> word[0:5]      
+>>> word[0:5]
 'This '
 
 ```
 
-* Python strings are immutable 
+* Python strings are immutable
 
 ```python
 >>> word[5] = 'a'
@@ -221,10 +220,10 @@ TypeError: 'str' object does not support item assignment
 ```python
 >>> "The sum of 1 + 2 is {0}".format(1+2)
 'The sum of 1 + 2 is 3'
-``` 
+```
 * `isalnum()`: Returns true if the string is alphanumeric
 * `isalpha()`, `isdecimal()`,`isdigit()`, or `isnumeric()`
-* `join()`: Return a string which is the concatenation of the strings, passed as argument in join. 
+* `join()`: Return a string which is the concatenation of the strings, passed as argument in join.
 
 ```python
 #!/usr/bin/python
@@ -253,7 +252,7 @@ output:
 See the examples below
 
 ```python
->>> print("My name is %s, I am %d yrs old" %("rajiv", 15))   # As tuples 
+>>> print("My name is %s, I am %d yrs old" %("rajiv", 15))   # As tuples
 My name is rajiv, I am 15 yrs old
 >>> print('%(language)s has %(number)03d quote types.' %     # As dictionary
 ...       {'language': "Python", "number": 2})
@@ -302,16 +301,16 @@ Python has 002 quote types.
 [1, 2, 3, 4, 1000, 6, 'Bangalore']
 
 >>> list[2:4] = ["Python"]          # Slices can also be initialized
->>> list                            
+>>> list
 [1, 2, 'Python', 1000, 6, 'Bangalore']
 
->>> len(list)                       # length of list can be found using len 
+>>> len(list)                       # length of list can be found using len
 6
 
 
 >>> ### Nesting of list
-... 
->>> 
+...
+>>>
 >>> a = [1, 2, 3]
 >>> b = ["m", "n", "o"]
 >>> nlist = [a, b]
@@ -348,7 +347,7 @@ Python has 002 quote types.
 >>> del a[0]                  # delete an item at ith index
 >>> a
 [1, 66.25, 333, 333, 1234.5]
->>> del a[2:4]                # delete sublist 
+>>> del a[2:4]                # delete sublist
 >>> a
 [1, 66.25, 1234.5]
 >>> del a[:]                  # delete whole list
@@ -391,7 +390,7 @@ TypeError: 'tuple' object does not support item assignment
 
 ```python
 >>> empty = ()
->>> singleton = 'hello',    
+>>> singleton = 'hello',
 >>> len(empty)
 0
 >>> len(singleton)
@@ -402,7 +401,7 @@ TypeError: 'tuple' object does not support item assignment
 
 #### Sets
 
-Please the examples below  
+Please the examples below
 ```python
 >>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 >>> print(basket)                      # show that duplicates have been removed
@@ -485,11 +484,11 @@ Lets see this with the help of an example
 ```python
 >>> # first n Fibbonaci numbers
 >>> n = 20               # single assignment
->>> a, b = 0, 1          # multi assignment 
+>>> a, b = 0, 1          # multi assignment
 >>> while n > 0:
 ...     print(a)
 ...     a, b, n = b, a+b, n-1         # multi assignment
-... 
+...
 0
 1
 1
@@ -502,7 +501,7 @@ Lets see this with the help of an example
 #deleting the rest.
 ```
 
-###### To Note here apart form syntax of while 
+###### To Note here apart form syntax of while
 * we can assign variables in the same line as shown in above example
 * `print` is printing each output in different lines
 
@@ -538,7 +537,7 @@ value of a is:  10 value of b is:  12
 See the example below
 ```python
 >>> # Program to find if number is multiple of 2 or 3
-... 
+...
 >>> x = int(input("Please enter an integer number: "))
 Please enter an integer number: 56
 >>> if x%2 == 0:
@@ -547,7 +546,7 @@ Please enter an integer number: 56
 ...     print("x is a multiple of 3")
 ... else:
 ...     print("x is not a multiple of 2 or 3")
-... 
+...
 x is a multiple of 2
 ```
 
@@ -559,17 +558,17 @@ x is a multiple of 2
 
 #### for Statements
 
-See the example below to understand about `for` statement in python 
+See the example below to understand about `for` statement in python
 
 ```python
 >>> ## To capitalize each statement in a string
-... stringList = ["ravi got  his pocket money.", 
-                  "he decided to buy an ice cream.", 
+... stringList = ["ravi got  his pocket money.",
+                  "he decided to buy an ice cream.",
                   "he ran to the ice ream shop, but in hurry he forgot the money",
                   "ravi came back home and kept the money in his piggy bank"]
 >>> for str in stringList:
 ...     print(str.capitalize())
-... 
+...
 Ravi got  his pocket money.
 He decided to buy an ice cream.
 He ran to the ice cream shop, but in hurry he  forgot the money
@@ -577,7 +576,7 @@ Ravi came back home and kept the money in his piggy bank
 
 ```
 
-* If the sequence itself needs to be modified while looping then its recommended to create a copy of same sequence using slice. 
+* If the sequence itself needs to be modified while looping then its recommended to create a copy of same sequence using slice.
 
 ```python
 >>> for w in words[:]:  # Loop over a slice copy of the entire list.
@@ -848,13 +847,13 @@ Above function can also be represented using lambda
 lambda x,y: x+y
 ```
 
-Lambda functions can be used wherever function objects are required. Said that, let us try some inbuilt 
+Lambda functions can be used wherever function objects are required. Said that, let us try some inbuilt
 functions like `map, filter`
 
 As help help of map
 ```python
 map(func, *iterables) --> map object
- |  
+ |
  |  Make an iterator that computes the function using arguments from
  |  each of the iterables.  Stops when the shortest iterable is exhausted.
 ```
@@ -863,7 +862,7 @@ we either can define a function first and then pass it as first param, or use la
 ```python
 map(sumof, [1,2,3], [4,5,6])
 ```
-or 
+or
 
 ```python
 map(lambda x,y: x+y, [1,2,3], [4,5,6])
@@ -884,7 +883,7 @@ You can also pass mode(`'r'`, `'w'`), which is optional.
 >>> f = open('data.txt')
 >>> for line in f:
 ...   print(line)
-... 
+...
 If you are reading this using python,
 
 You are on your way to become awesome python programmer.
@@ -913,10 +912,10 @@ IOError: [Errno 2] No such file or directory: 'story.txt'
 
 ### Classes
 
-A class is a specification (think of it as a blueprint or pattern and a set of instructions) 
-of how to provide some service. 
-Engineers and construction and factory workers use blueprints to build cars, buildings, bridges, 
-virtually anything.  Tailors, seamsters, printers use patterns to make the clothes we wear, 
+A class is a specification (think of it as a blueprint or pattern and a set of instructions)
+of how to provide some service.
+Engineers and construction and factory workers use blueprints to build cars, buildings, bridges,
+virtually anything.  Tailors, seamsters, printers use patterns to make the clothes we wear,
 books we read.  Chefs follow recipes to put together meals.
 
 ```python
@@ -1029,24 +1028,24 @@ Help on class BankAccount in module __main__:
 class BankAccount(builtins.object)
  |  This class can be used to get the bank account details
  |  and also to do transaction.
- |  
+ |
  |  Methods defined here:
- |  
+ |
  |  __init__(self, initial_balance=0)
  |      Account holder can open their account with certail
  |      Initial balance, otherwise initial balace will be 0
- |  
+ |
  |  deposit(self, amount)
  |      This function can be used to deposit amount into
  |      your account.
- |  
+ |
  |  withdraw(self, amount)
  |      This function can be used to withdraw amount from
  |      your account.
 ```
 
 #### Inheritance
-A language feature would not be worthy of the name “class” without supporting inheritance. 
+A language feature would not be worthy of the name “class” without supporting inheritance.
 The syntax for a derived class definition looks like this:
 
 ```Python
@@ -1072,8 +1071,8 @@ Example
 'Maruti'
 >>> obj.power()
 '800cc'
->>> 
->>> 
+>>>
+>>>
 >>> class Swift(Alto):
     def new_features(self):
         return 'airbag, bluetooth'
@@ -1085,7 +1084,7 @@ Example
 '800cc'
 >>> sw_obj.new_features()
 'airbag, bluetooth'
->>> 
+>>>
 >>> class Swift_newgen(Swift):
     def price(self):
         return '5L INR'
@@ -1099,7 +1098,32 @@ Example
 '1200cc'
 >>> ng_obj.maker()
 'Maruti'
->>> 
+>>>
 ```
 
 Note: Some of the examples in this tutorial are taken form official documentation/tutorial of python3. [See here] https://docs.python.org/3/tutorial/
+
+
+## Resources
+
+Find other Python developers near you.
+
+[Python mailing lists](https://mail.python.org/mailman/listinfo)
+
+[Meetup](http://meetup.com)
+
+
+Here are some other useful courses
+
+#### Python
+
+https://www.coursera.org/learn/python
+
+
+#### Django
+
+https://teamtreehouse.com/library/django-basics/
+
+https://ultimatedjango.com/learn-django/chapters/
+
+https://docs.djangoproject.com/en/dev/intro/tutorial01/
