@@ -235,3 +235,5 @@ dict_values([25, 'Dan'])
 ```
 
 Other functions like `map()`, `filter()`, `range()`, `zip()` return iterators.
+
+Also see: http://docs.python-guide.org/en/latest/writing/gotchas/
