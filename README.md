@@ -108,7 +108,7 @@ Mathematical operator works similar to other languages.
 What is simple and compound interest for 50,000 Rs at 8 % per annum for 10 years?
 
 
-##### Variable assignment:
+#### Variable assignment:
 
 ```python
 >>> a = 12
@@ -205,7 +205,7 @@ SyntaxError: invalid syntax
 
 ```
 
-##### String Indexing
+#### String Indexing
 
 * First character of a string has index 0
 * Character is a string of size 1
@@ -232,7 +232,7 @@ SyntaxError: invalid syntax
 
 ```
 
-##### String Slicing
+#### String Slicing
 
 * To obtain substring we use word slicing
 * In `word[2:10]`, character at index `2` is included and at index `10` is excluded
@@ -262,7 +262,7 @@ TypeError: 'str' object does not support item assignment
 
 ```
 
-##### String Methods
+#### String Methods
 
 * `capitalize()`: Return a copy of the string with its first character capitalized and the rest lowercased
 * `center(width[, fillchar])`: Return centered in a string of length width
@@ -302,7 +302,7 @@ output:
 
 * There are many other predefined methods for strings, see [here](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
-##### String Formating printf-style
+#### String Formating printf-style
 See the examples below
 
 ```python
@@ -313,7 +313,7 @@ My name is rajiv, I am 15 yrs old
 Python has 002 quote types.
 ```
 
-##### in and len()
+#### in and len()
 
 * `len(str)`: This will return the length of the string, `str`
 * `"abc" in str`: Will return `true` if "abc" is substring of `str`
@@ -321,7 +321,7 @@ Python has 002 quote types.
 `str` is a string variable
 
 
-##### Quiz
+#### Quiz
 
 Check if given word is a polindrome?
 
