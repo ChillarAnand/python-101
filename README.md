@@ -123,6 +123,20 @@ What is simple and compound interest for 50,000 Rs at 8 % per annum for 10 years
 
 In interactive mode the last printed expression is assigned to a variable named `_`
 
+You don't need to define the type of variable before hand.
+
+```python
+In [2]: a = 'hello'
+
+In [3]: a
+Out[3]: 'hello'
+
+In [4]: a = 1
+
+In [5]: a
+Out[5]: 1
+```
+
 #### Quiz
 
 Swap 2 variables with and without temporary variable
@@ -218,6 +232,8 @@ SyntaxError: invalid syntax
 
 ```
 
+##### String Slicing
+
 * To obtain substring we use word slicing
 * In `word[2:10]`, character at index `2` is included and at index `10` is excluded
 * Slices have default indices. An omitted first index defaults to `0` and omitted 2nd index defaults to size of the string
@@ -247,6 +263,7 @@ TypeError: 'str' object does not support item assignment
 ```
 
 ##### String Methods
+
 * `capitalize()`: Return a copy of the string with its first character capitalized and the rest lowercased
 * `center(width[, fillchar])`: Return centered in a string of length width
 * `count(sub[, start[, end]])`: Return the number of non-overlapping occurrences of substring sub in the range [start, end]
@@ -302,6 +319,12 @@ Python has 002 quote types.
 * `"abc" in str`: Will return `true` if "abc" is substring of `str`
 
 `str` is a string variable
+
+
+##### Quiz
+
+Check if given word is a polindrome?
+
 
 
 ### Data Structures
