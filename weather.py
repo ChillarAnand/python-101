@@ -17,4 +17,10 @@ url = 'https://www.metaweather.com/api/location/2295420'
 response = urlopen(url)
 data = response.read().decode().strip()
 data = json.loads(data)
-pprint(data)
+weather = {
+    'City': data['title'],
+    'Location': data['parent']['latt_long'],
+    'Weather': data['consolidated_weather'][0],
+}
+# pprint(data)
+pprint(weather)
