@@ -523,6 +523,14 @@ Proove venn associative property with python
 A u (B n C)  =  (A u B) n (A u C)
 
 
+```py
+>>> numbers = [1, 2, 3, 1, 4, 1, 2, 5]
+```
+
+Remove duplicate elements from a list?
+
+
+
 #### Dictionaries
 
 * Called associative arrays in other languages
@@ -571,9 +579,42 @@ False
 {'sape': 4139, 'jack': 4098, 'guido': 4127}
 ```
 
+#### Quiz
+
+
+
+```py
+>>> data = {'bengaluru': '560029', 'moodbidri': '574227', 'mangaluru': '575001'}
+```
+
+Swap keys and values in a dictionary
+
 
 
 ### Control Flow Tools
+
+#### if Statement
+
+See the example below
+```python
+>>> # Program to find if number is multiple of 2 or 3
+...
+>>> x = int(input("Please enter an integer number: "))
+Please enter an integer number: 56
+>>> if x%2 == 0:
+...     print("x is a multiple of 2")
+... elif x%3 == 0:
+...     print("x is a multiple of 3")
+... else:
+...     print("x is not a multiple of 2 or 3")
+...
+x is a multiple of 2
+```
+
+##### Note
+* There can be zero or more `elif` block and `else` block is optional
+
+
 
 #### while loop
 Lets see this with the help of an example
@@ -628,30 +669,6 @@ value of a is:  10 value of b is:  12
 ...
 0, 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
 ```
-
-#### if Statement
-
-See the example below
-```python
->>> # Program to find if number is multiple of 2 or 3
-...
->>> x = int(input("Please enter an integer number: "))
-Please enter an integer number: 56
->>> if x%2 == 0:
-...     print("x is a multiple of 2")
-... elif x%3 == 0:
-...     print("x is a multiple of 3")
-... else:
-...     print("x is not a multiple of 2 or 3")
-...
-x is a multiple of 2
-```
-
-##### Note
-* There can be zero or more `elif` block and `else` block is optional
-
-##### input()
-* Input is taken as a raw string which is then typecasted into its respective type.
 
 #### for Statements
 
@@ -746,6 +763,12 @@ robin the brave
 
 * To convert `range` into a list use `list(range(5))`
 
+
+##### input()
+
+* Input is taken as a raw string which is then typecasted into its respective type.
+
+
 #### pythons `break` `continue` and `else`
 * `break`: breaks out of the loop
 * `continue`: continues with the next iteration of the loop
@@ -779,6 +802,7 @@ robin the brave
 ...    pass
 >>>
 ```
+
 
 ### Functions
 
