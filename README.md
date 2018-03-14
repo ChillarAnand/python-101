@@ -74,6 +74,16 @@ Press `Windows + R` to open `Run`. Type `python` and press enter which opens up 
 
 ## Content
 
+### Demo
+
+Simple python projects that can be done in few minutes to few hours.
+
+- Tetris game
+- Weather widget
+- Django admin
+- Auto download subtitles for movies
+
+
 ### Using the Python Interpreter
 
 
@@ -391,6 +401,7 @@ Check if given word is a polindrome?
 ```
 
 ##### List Methods
+
 * list.append(x): Add an item, `x` to the end of the `list`
 * list.extend(L): Append the list, `L` to `list`
 * list.insert(i, x): Insert item, `x` at index, `i` in the given `list`
@@ -404,6 +415,7 @@ Check if given word is a polindrome?
 * list.sort(reverse=false): sort the list in ascending order if `reverse` is false and vice versa
 
 ##### The `del` statement
+
 ```python
 >>> a = [-1, 1, 66.25, 333, 333, 1234.5]
 >>> del a[0]                  # delete an item at ith index
