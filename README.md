@@ -430,6 +430,14 @@ Check if given word is a polindrome?
 >>> del a                     # delete the entire variable
 ```
 
+#### Quiz:
+
+```py
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+Replace all even numbers with `0`.
+
+
 #### Tuples
 
 * All tuples are enclosed in paranthesis, to support nested tuples
@@ -501,7 +509,20 @@ False
 {'r', 'd', 'b', 'm', 'z', 'l'}
 ```
 
+```py
+In [23]: A = { 0, 1, 2, 3, 4 }
+
+In [24]: B = { 1, -2, 3, 4, 5, 6 }
+
+In [25]: C = { 2, 4, 6, 7 }
+```
+
+Proove venn associative property with python
+A u (B n C)  =  (A u B) n (A u C)
+
+
 #### Dictionaries
+
 * Called associative arrays in other languages
 * They are indexed by user defined keys
 * Keys are immutable
