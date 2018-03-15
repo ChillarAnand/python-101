@@ -70,6 +70,24 @@ Press `Windows + R` to open `Run`. Type `python` and press enter which opens up 
 
 ![Alt windows](https://cloud.githubusercontent.com/assets/4463796/11190670/d8e3b9ae-8cbc-11e5-958d-10f1c313e8b9.PNG)
 
+Open python idle and run
+
+```py
+import os
+import sys
+
+print(os.path.dirname(sys.executable))
+```
+
+If `cmd` is not able to find python, then set `PATH` variable.
+
+My computer -> Properties -> Advanced settingss -> Env variables -> New
+
+PATH
+
+Also include `Scripts` folder.
+
+
 
 
 ## Content
@@ -1224,6 +1242,7 @@ Example
 
 Note: Some of the examples in this tutorial are taken form official documentation/tutorial of python3. [See here] https://docs.python.org/3/tutorial/
 
+
 #### Argument Passing
 The python script name and additional arguments thereafter are turned into a list of string and assigned into argv variable in sys module.
 
@@ -1268,6 +1287,55 @@ print("This is python-101")
 There are two ways to run this file:
 * `python foo.py`
 * Make it executable `chmod +x foo.py` and run the executable `./foo.py`
+
+
+### Modules
+
+
+#### Standard library
+
+#### sys
+
+```py
+import sys
+
+sys.platform
+
+sys.path
+```
+
+#### os
+
+```py
+import os
+
+os.listdir('.')
+
+os.path.getsize('index.html')
+```
+
+#### collections
+
+```py
+python -m http.server
+```
+
+
+
+
+### Django admin portal
+
+#### install django
+
+```sh
+python -m pip install django
+django-admin startproject library
+django-admin startapp books
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+```
 
 
 ## Resources
