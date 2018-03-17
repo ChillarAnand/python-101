@@ -1357,9 +1357,14 @@ Need to conduct a python workshop in your institute? Contact [Python Express](ht
 [Think Python](http://greenteapress.com/thinkpython/html/index.html)
 
 
+
 #### Courses
 
+https://www.edx.org/course/subject/computer-science/python
+
 https://www.coursera.org/learn/python
+
+https://www.edx.org/course/subject/computer-science/python
 
 
 #### Material
