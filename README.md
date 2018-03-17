@@ -1338,26 +1338,34 @@ python manage.py createsuperuser
 ```
 
 
-## Resources
+### Resources
 
-Find other Python developers near you.
+#### People
+
+Find other Python developers near you and get real time help from them.
 
 [Python mailing lists](https://mail.python.org/mailman/listinfo)
 
-[Meetup](http://meetup.com)
+
+Need to conduct a python workshop in your institute? Contact [Python Express](http://pythonexpress.in)
 
 
-Here are some other useful courses
+#### Books
 
-#### Python
+[Invent With Python](http://inventwithpython.com/chapters/)
+
+[Think Python](http://greenteapress.com/thinkpython/html/index.html)
+
+
+#### Courses
 
 https://www.coursera.org/learn/python
 
 
-#### Django
+#### Material
 
-https://teamtreehouse.com/library/django-basics/
-
-https://ultimatedjango.com/learn-django/chapters/
+https://github.com/ChillarAnand/python-101
 
 https://docs.djangoproject.com/en/dev/intro/tutorial01/
+
+https://pymbook.readthedocs.io/en/latest/
