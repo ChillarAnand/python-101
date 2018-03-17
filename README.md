@@ -1342,9 +1342,7 @@ python manage.py createsuperuser
 
 #### People
 
-Find other Python developers near you and get real time help from them.
-
-[Python mailing lists](https://mail.python.org/mailman/listinfo)
+Find other Python developers near you and get real time help from them. [Python mailing lists](https://mail.python.org/mailman/listinfo)
 
 
 Need to conduct a python workshop in your institute? Contact [Python Express](http://pythonexpress.in)
