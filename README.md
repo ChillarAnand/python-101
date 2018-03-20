@@ -1329,12 +1329,16 @@ python -m http.server
 
 ```sh
 python -m pip install django
+
 django-admin startproject library
 django-admin startapp books
 
 python manage.py makemigrations
 python manage.py migrate
+
 python manage.py createsuperuser
+
+python manage.py runserver
 ```
 
 
